@@ -92,10 +92,8 @@ return [
             'username' => env('DB_USERNAME', 'postgres'),
             'password' => env('DB_PASSWORD', 'adminroot'),
             'charset' => env('DB_CHARSET', 'utf8'),
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'search_path' => 'public',
-            'sslmode' => env('DB_SSLMODE', 'prefer'),
+             'prefix' => '',
+    'schema' => 'public',
         ],
 
         'sqlsrv' => [
