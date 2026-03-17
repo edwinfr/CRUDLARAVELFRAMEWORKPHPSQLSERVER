@@ -17,8 +17,9 @@ Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.upda
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 // API REST (sin CSRF)
-Route::prefix('api')
+/*Route::prefix('api')
     ->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class])
     ->group(function () {
         Route::apiResource('posts', ApiPostController::class);
     });
+*/
