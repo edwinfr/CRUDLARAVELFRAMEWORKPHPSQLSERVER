@@ -68,7 +68,7 @@
     let modo = 'crear'; // o 'editar'
 
     function cargarPosts() {
-        $.get("posts/list", function (data) {
+        $.get("/posts/list", function (data) {
             const $tbody = $('#tablaPosts tbody');
             $tbody.empty();
             data.forEach(post => {
