@@ -74,19 +74,27 @@
     $(function () {
 
 
-        let tabla = $('#tablaPosts').DataTable({
-   ajax:{
-        //url:"/posts/list",
-        dataSrc:""
-    },
-    columns:[
-        {data:"id"},
-        {data:"title"},
-        {data:"content"}
-    ],
-    paging:true,
-    searching:true,
-    info:true
+let tabla = $('#tablaPosts').DataTable({
+
+ajax:{
+url:"/posts/list",
+dataSrc:""
+},
+
+columns:[
+{data:"id"},
+{data:"title"},
+{data:"content"}
+],
+
+paging:true,
+searching:true,
+info:true,
+lengthMenu:[5,10,25,50],
+
+language:{
+url:"https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
+}
 
 });
 
