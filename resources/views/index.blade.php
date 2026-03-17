@@ -75,7 +75,10 @@
 
 
         let tabla = $('#tablaPosts').DataTable({
-
+   ajax:{
+       // url:"/posts/list",
+        dataSrc:""
+    },
     columns:[
         {data:"id"},
         {data:"title"},
