@@ -202,7 +202,7 @@ tabla.draw();
         $('#tablaPosts').on('click', '.btnEditar', function () {
             modo = 'editar';
             const $tr = $(this).closest('tr');
-            $('#postId').val($tr.data('id'));
+            $('#postId').val($tr.find('td:nth-child(1)').text());
             alert($('#postId').val());
             $('#title').val($tr.find('td:nth-child(2)').text());
             $('#content').val($tr.find('td:nth-child(3)').text());
