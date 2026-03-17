@@ -82,12 +82,11 @@ return [
                 (PHP_VERSION_ID >= 80500 ? \Pdo\Mysql::ATTR_SSL_CA : \PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
-        'pgsql' => [
+   'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DB_URL'),
-            'host' => env('DB_HOST', 'postgres.railway.internal'),
-            'port' => env('DB_PORT', '5432'),
+            'url' => env('DB_URL','PGPASSWORD=cRAzrwRGKskKHbcCqXGDibXDfgmLYzxh psql -h caboose.proxy.rlwy.net -U postgres -p 58991 -d railway'),
+            'host' => env('DB_HOST', 'caboose.proxy.rlwy.net'),
+            'port' => env('DB_PORT', '58991'),
             'database' => env('DB_DATABASE', 'railway'),
             'username' => env('DB_USERNAME', 'postgres'),
             'password' => env('DB_PASSWORD', 'cRAzrwRGKskKHbcCqXGDibXDfgmLYzxh'),
