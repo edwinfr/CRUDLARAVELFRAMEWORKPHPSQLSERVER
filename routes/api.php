@@ -3,4 +3,6 @@
 use App\Http\Controllers\Api\PostController;
 use Illuminate\Support\Facades\Route;
 
-Route::apiResource('posts', PostController::class);
+Route::name('api.')->group(function () {
+    Route::resource('posts', PostController::class);
+});
