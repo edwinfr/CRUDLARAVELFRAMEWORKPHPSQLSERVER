@@ -84,7 +84,7 @@ return [
         ],
    'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DB_URL','PGPASSWORD=cRAzrwRGKskKHbcCqXGDibXDfgmLYzxh psql -h caboose.proxy.rlwy.net -U postgres -p 58991 -d railway'),
+            'url' => env('DB_URL'),
             'host' => env('DB_HOST', 'caboose.proxy.rlwy.net'),
             'port' => env('DB_PORT', '58991'),
             'database' => env('DB_DATABASE', 'railway'),
