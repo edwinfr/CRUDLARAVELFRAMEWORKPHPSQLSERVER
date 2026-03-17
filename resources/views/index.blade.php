@@ -132,7 +132,7 @@
                 content: $('#content').val()
             };
 
-            let url = "{{ route('posts.store') }}";
+            let url = "/posts";
             let type = 'POST';
 
             if (modo === 'editar') {
