@@ -12,12 +12,10 @@ class PostController extends Controller
         return view('posts.index');
     }
 
- public function list()
-{
-    return response()->json(
-        Post::orderBy('id','asc')->get()
-    );
-}
+    public function list()
+    {
+        return response()->json(Post::all());
+    }
 
     public function store(Request $request)
     {
