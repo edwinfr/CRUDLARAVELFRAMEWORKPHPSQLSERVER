@@ -15,7 +15,7 @@ class PostController extends Controller
  public function list()
 {
     return response()->json(
-        Post::orderBy('created_at','desc')->get()
+        Post::orderBy('id','desc')->get()
     );
 }
 
