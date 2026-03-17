@@ -90,11 +90,11 @@ columns:[
 data:null,
 render:function(data){
 return `
-<button class="btn btn-warning btn-edit" data-id="${data.id}">
+<button class="btn btn-warning btn-edit  btnEditar" data-id="${data.id}">
 Editar
 </button>
 
-<button class="btn btn-danger btn-delete" data-id="${data.id}">
+<button class="btn btn-danger btn-delete  btnEliminar" data-id="${data.id}" data-title="${data.title}">
 Eliminar
 </button>
 `;
@@ -211,7 +211,7 @@ tabla.draw();
         });
 
         $('#tablaPosts').on('click', '.btnEliminar', function () {
-            if (!confirm('¿Eliminar este registro?')) return;
+            if (!confirm('¿Eliminar este registro?\n'+$(this).data('id')+":"+$(this).data('title'))) return;
             const id = $(this).closest('tr').data('id');
             $.ajax({
                 url: `/posts/${id}`,
