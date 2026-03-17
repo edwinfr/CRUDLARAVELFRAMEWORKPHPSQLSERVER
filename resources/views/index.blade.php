@@ -240,7 +240,7 @@ tabla.draw();
 
             if (modo === 'editar') {
                 url = `/posts/${id}`;
-                type = 'POST';
+                type = 'UPDATE';
             }
 
             $.ajax({
