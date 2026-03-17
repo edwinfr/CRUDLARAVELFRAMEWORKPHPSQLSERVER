@@ -203,6 +203,7 @@ tabla.draw();
             modo = 'editar';
             const $tr = $(this).closest('tr');
             $('#postId').val($tr.data('id'));
+            alert($('#postId').val());
             $('#title').val($tr.find('td:nth-child(2)').text());
             $('#content').val($tr.find('td:nth-child(3)').text());
             $('#tituloModal').text('Editar Post');
@@ -240,7 +241,7 @@ tabla.draw();
 
             if (modo === 'editar') {
                 url = "/posts/"+id;
-                type = 'POST';
+                type = 'PUT';
             }
 
             $.ajax({
