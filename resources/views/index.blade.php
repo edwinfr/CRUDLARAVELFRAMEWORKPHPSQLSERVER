@@ -66,7 +66,16 @@
 <script>
     const csrfToken = $('meta[name="csrf-token"]').attr('content');
     let modo = 'crear'; // o 'editar'
-
+    $(function () {
+        let tabla = $('#tablaPosts').DataTable({
+paging:true,
+searching:true,
+info:true,
+lengthMenu:[5,10,25,50],
+language:{
+url:"https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
+}
+});
     function cargarPosts() {
         $.get("/posts/list", function (data) {
             const $tbody = $('#tablaPosts tbody');
@@ -87,7 +96,7 @@
         });
     }
 
-    $(function () {
+
         cargarPosts();
 
         $('#btnNuevo').on('click', function () {
