@@ -13,7 +13,7 @@ Route::get('/', function () {
 Route::get('/articulos', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/list', [PostController::class, 'list'])->name('posts.list');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+Route::post('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 // API REST (sin CSRF)
