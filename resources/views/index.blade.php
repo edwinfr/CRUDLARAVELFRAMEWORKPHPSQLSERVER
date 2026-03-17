@@ -73,6 +73,7 @@
     let modo = 'crear'; // o 'editar'
     $(function () {
 
+    
 
 let tabla = $('#tablaPosts').DataTable({
 
@@ -84,7 +85,21 @@ dataSrc:""
 columns:[
 {data:"id"},
 {data:"title"},
-{data:"content"}
+{data:"content"},
+{
+data:null,
+render:function(data){
+return `
+<button class="btn btn-warning btn-edit" data-id="${data.id}">
+Editar
+</button>
+
+<button class="btn btn-danger btn-delete" data-id="${data.id}">
+Eliminar
+</button>
+`;
+}
+}
 ],
 
 paging:true,
@@ -149,7 +164,7 @@ tabla.draw();
 });
 
 }
-loadData();
+//loadData();
 
     function cargarPosts() {
         $.get("/posts/list", function (data) {
