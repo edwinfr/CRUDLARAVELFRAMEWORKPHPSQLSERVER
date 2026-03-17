@@ -73,7 +73,7 @@
     let modo = 'crear'; // o 'editar'
     $(function () {
 
-    
+
 
 let tabla = $('#tablaPosts').DataTable({
 
@@ -218,7 +218,7 @@ tabla.draw();
                 type: 'DELETE',
                 headers: { 'X-CSRF-TOKEN': csrfToken },
                 success: function () {
-                    cargarPosts();
+                    tabla.ajax.reload();
                 }
             });
         });
@@ -246,7 +246,7 @@ tabla.draw();
                 headers: { 'X-CSRF-TOKEN': csrfToken },
                 success: function () {
                     bootstrap.Modal.getInstance(document.getElementById('modalPost')).hide();
-                    cargarPosts();
+                   tabla.ajax.reload();
                 },
                 error: function (xhr) {
                     alert('Error: ' + xhr.responseText);
