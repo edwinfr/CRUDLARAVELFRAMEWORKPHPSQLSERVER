@@ -212,7 +212,7 @@ tabla.draw();
 
         $('#tablaPosts').on('click', '.btnEliminar', function () {
             if (!confirm('¿Eliminar este registro?\n'+$(this).data('id')+":"+$(this).data('title'))) return;
-            const id = $(this).closest('tr').data('id');
+            const id = $(this).data('id');
             $.ajax({
                 url: `/posts/${id}`,
                 type: 'DELETE',
