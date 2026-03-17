@@ -76,6 +76,59 @@ language:{
 url:"https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
 }
 });
+
+
+
+
+loadData();
+
+function loadData(){
+
+$.ajax({
+
+url:"/posts/list",
+
+success:function(data){
+
+tabla.clear();
+
+data.forEach(function(row){
+
+tabla.row.add([
+
+row.ID,
+row.TITLE,
+row.CONTENT,
+
+`
+<button class="btn btn-warning btn-edit"
+data-id="${row.ID}"
+data-nombre="${row.TITLE}"
+data-email="${row.CONTENT}">
+Editar
+</button>
+
+<button class="btn btn-danger btn-delete"
+data-id="${row.ID}"
+data-nombre="${row.TITLE}"
+data-email="${row.CONTENT}">
+Eliminar
+</button>
+
+`
+
+]);
+
+});
+
+tabla.draw();
+
+}
+
+});
+
+}
+
     function cargarPosts() {
         $.get("/posts/list", function (data) {
             const $tbody = $('#tablaPosts tbody');
@@ -97,7 +150,7 @@ url:"https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
     }
 
 
-        cargarPosts();
+       // cargarPosts();
 
         $('#btnNuevo').on('click', function () {
             modo = 'crear';
