@@ -87,7 +87,7 @@
     paging:true,
     searching:true,
     info:true
-}
+
 });
 
 
