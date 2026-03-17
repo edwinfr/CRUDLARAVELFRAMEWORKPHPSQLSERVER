@@ -80,7 +80,7 @@ url:"https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
 
 
 
-loadData();
+
 
 function loadData(){
 
@@ -128,6 +128,7 @@ tabla.draw();
 });
 
 }
+loadData();
 
     function cargarPosts() {
         $.get("/posts/list", function (data) {
