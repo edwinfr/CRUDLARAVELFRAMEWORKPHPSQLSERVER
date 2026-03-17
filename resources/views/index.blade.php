@@ -67,6 +67,8 @@
     const csrfToken = $('meta[name="csrf-token"]').attr('content');
     let modo = 'crear'; // o 'editar'
     $(function () {
+
+    
         let tabla = $('#tablaPosts').DataTable({
 paging:true,
 searching:true,
@@ -87,7 +89,7 @@ function loadData(){
 $.ajax({
 
 url:"/posts/list",
-
+method:"GET",
 success:function(data){
 
 tabla.clear();
