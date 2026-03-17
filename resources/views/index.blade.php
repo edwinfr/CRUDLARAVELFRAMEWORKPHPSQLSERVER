@@ -218,7 +218,11 @@ tabla.draw();
                 type: 'DELETE',
                 headers: { 'X-CSRF-TOKEN': csrfToken },
                 success: function () {
-                    tabla.ajax.reload();
+                      // Recargar datos
+        tabla.ajax.reload(null,false);
+
+        // Limpiar búsqueda
+        tabla.search('').draw();
                 }
             });
         });
@@ -246,7 +250,11 @@ tabla.draw();
                 headers: { 'X-CSRF-TOKEN': csrfToken },
                 success: function () {
                     bootstrap.Modal.getInstance(document.getElementById('modalPost')).hide();
-                   tabla.ajax.reload();
+                     // Recargar datos
+        tabla.ajax.reload(null,false);
+
+        // Limpiar búsqueda
+        tabla.search('').draw();
                 },
                 error: function (xhr) {
                     alert('Error: ' + xhr.responseText);
